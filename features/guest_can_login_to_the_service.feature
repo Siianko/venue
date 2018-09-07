@@ -20,3 +20,9 @@ Feature: Guest can login to the service
         And I fill in 'Password' with 'password'
         And I click on 'Login'
         Then I should see 'Signed in successfully.'
+
+     Scenario: Guest can logout from the service 
+        Given I am logged in as 'thomas@venue.se'
+        And I am on the 'landing' page
+        Then I should see 'Sign out'
+
