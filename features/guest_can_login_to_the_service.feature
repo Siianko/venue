@@ -10,9 +10,9 @@ Feature: Guest can login to the service
         Given the following user exist
         |email           |password   |
         |thomas@venue.se |password   |
+        And I am on the 'landing' page
 
     Scenario: Guest can login to the service [Happy path]
-        Given I am on the 'landing' page
         And I click on 'Log in'
         And I wait 1 second
         Then I should see 'Log in with Email address'
@@ -23,6 +23,8 @@ Feature: Guest can login to the service
 
      Scenario: Guest can logout from the service 
         Given I am logged in as 'thomas@venue.se'
-        And I am on the 'landing' page
         Then I should see 'Sign out'
+        When I click on 'Sign out'
+        Then I should see 'Signed out successfully.'
+        And I am on the 'landing' page
 
